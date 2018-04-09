@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+
+	<constant name="struts.i18n.encoding" value="utf-8">constant</constant>
+	<constant name="struts.devMode" value="true">constant</constant>
+	<package name="business"  extends="struts-default">
+	
+	
+	<action name="carselect" class="com.yh.action2.SelectOrderAction">		
+	 <result name="success">/html/slelectorder.jsp</result>
+	 	 
+	</action>
+	<action name="uploadselect" class="com.yh.action2.SelectUploadShopAction">		
+	 <result name="success">/html/uploaddo.jsp</result>
+	 	 
+	</action>
+	<action name="updateupload" class="com.yh.action2.UpdateUploadAction">		
+	 <result name="success" type="chain"><param name="actionName">uploadselect</param></result>
+	 	 
+	</action>
+	<action name="selectimage" class="com.yh.action2.SelectImageAction">		
+	 <result name="success">/html/showimage.jsp</result>
+	 	 
+	</action>
+	
+	<action name="login" class="com.yh.action.LoginAction">		
+	 <result name="success">/user/index.jsp</result>
+	 <result name="error">/user/login.jsp</result>	 
+	</action>
+	
+	<action name="register" class="com.yh.action.RegisterAction">		
+	 <result name="success">/user/login.jsp</result>
+	 <result name="error">/user/register.jsp</result>	 
+	</action>
+	<action name="selectuser" class="com.yh.action2.SelectUserAction">		
+	 <result name="success">/html/selectuser.jsp</result>
+	  
+	</action>
+	<action name="selectshop" class="com.yh.action2.SelectShopAction">		
+	 <result name="success">/html/selectshop.jsp</result>
+	  
+	</action>
+	<action name="product" class="com.yh.action.ProductAction">		
+	 <result name="success">/user/ONEProduct.jsp</result>
+	 <result name="error">/user/index.jsp</result>	 
+	</action>
+	<action name="addcar" class="com.yh.action.AddcarAction">		
+	 <result name="success">/user/havecar.jsp</result>
+	 <result name="error">/user/car.jsp</result>	 
+	</action>
+	<action name="search" class="com.yh.action.SearchAction">		
+	 <result name="success">/user/ViewProduct.jsp</result>
+	  
+	</action>
+	<action name="view" class="com.yh.action.ViewAction">		
+	 <result name="success">/user/ViewProduct.jsp</result>
+	  
+	</action>
+	<action name="view2" class="com.yh.action.View2Action">		
+	 <result name="success">/user/ViewProduct.jsp</result>
+	  
+	</action>
+	<action name="add" class="com.yh.action.AddlistAction">		
+	 <result name="success">/user/car.jsp</result>
+	  
+	</action>
+	<action name="upload" class="com.yh.action.UploadAction">		
+	 <result name="success">/user/uploadshop.jsp</result>
+	  
+	</action>
+	
+	<action name="docar" class="com.yh.action.DocarAction">		
+	 <result name="success">/user/index.jsp</result>
+	  <result name="error">/user/index.jsp</result>
+	</action>
+	<action name="like" class="com.yh.action.SelectlikeAction">		
+	 <result name="success">/user/like.jsp</result>
+	 <result name="error">/user/login.jsp</result>
+	</action>
+	<action name="addlike" class="com.yh.action.AddlikeAction">		
+	 <result name="success">/user/index.jsp</result>
+	 <result name="error">/user/index.jsp</result>
+	</action>
+	<action name="myshop" class="com.yh.action.MyshopAction">		
+	 <result name="success">/user/myshop.jsp</result>
+	 <result name="error">/user/login.jsp</result>
+	</action>
+	<action name="changeinfor" class="com.yh.action.ChangeInforAction">		
+	 <result name="success" type="chain"><param name="actionName">mycount</param></result>
+	 <result name="error">/user/login.jsp</result>
+	</action>
+	<action name="mycount" class="com.yh.action.MyInforAction">		
+	 <result name="success">/user/selfcount.jsp</result>
+	 <result name="error">/user/login.jsp</result>
+	</action>
+	</package>
+</struts> 
